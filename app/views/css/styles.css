@@ -1,0 +1,163 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap');
+
+:root{
+    --primaryColor: #3B60F1;
+    --secondaryColor: #253C97;
+    --darkColor: #070C1E;
+    --clearColor: #fafafa;
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+.sidebar{
+    width: 150px;
+    background-color: var(--darkColor);
+    position: fixed;
+    height: 100%;
+    overflow: auto;
+}
+
+.sidebar a{
+    display: block;
+    color: var(--clearColor);
+    padding: 1rem;
+    text-decoration: none;
+}
+
+.sidebar a.active{
+    background-color: var(--secondaryColor);
+}
+
+.sidebar a:hover:not(.active){
+    background-color: var(--primaryColor);
+}
+
+.container{
+    margin-left: 150px;
+    gap: 1rem;
+    padding: 1rem;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+}
+
+.card2{
+    grid-column: span 2;
+    box-shadow: 1px 1px 10px var(--darkColor);
+    padding: .5rem;
+    overflow: scroll;
+}
+
+.card2 h2{
+    text-align: center;
+}
+
+.card2 p{
+    text-align: center;
+}
+
+.card2 form{
+    width: 90%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.card2 label,input,button{
+    display: block;
+    width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+    padding: .5rem;
+}
+
+.card2 button{
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    background-color: var(--primaryColor);
+    color: var(--clearColor);
+    font-weight: bold;
+    outline: none;
+    border: none;
+    transition: .5s ease;
+    cursor: pointer;
+}
+
+.card2 button:hover{
+    background-color: var(--darkColor);
+}
+
+.card2 input{
+    outline: none;
+    border: 1px solid var(--primaryColor);
+    transition: .5s ease;
+}
+
+.card2 input:focus{
+    outline: none;
+    border: 1px solid var(--secondaryColor);
+}
+
+.card2 .formError{
+    border: 1px solid red;
+}
+
+.card2 #error1,#error2{
+    color: red;
+    font-weight: bold;
+}
+
+.subtitle{
+    margin-bottom: 1rem;
+}
+
+.__result{
+    font-weight: bold;
+}
+
+.__colorResult{
+    color: var(--primaryColor);
+}
+
+.carResults{
+    width: 1000px;
+    border: 1px solid var(--primaryColor);
+    text-align: center;
+    padding: .5rem;
+}
+
+.carResults td{
+    width: auto;
+}
+
+/* Responsive Design*/
+@media screen and (max-width: 700px) {
+    .sidebar {
+      width: 100%;
+      height: auto;
+      position: relative;
+    }
+    
+    .sidebar a {
+        float: left;
+    }
+    
+    .container{
+        margin-left: 0;
+    }
+
+    .card2{
+        grid-column: span 4;
+    }
+  }
+
+  @media screen and (max-width: 400px) {
+    .sidebar a {
+      text-align: center;
+      float: none;
+    }
+  }
